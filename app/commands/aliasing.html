@@ -83,13 +83,15 @@
           <pre><code class="javascript">// this is a good use case for an alias,
 // we don't want to write this long traversal again
 
-cy.get('.as-table').find('tbody>tr')
-  .first().find('td').first().find('button').as('firstBtn')
+cy.get('.as-table')
+  .find('tbody>tr').first()
+  .find('td').first()
+  .find('button').as('firstBtn')
 
 // maybe do some more testing here...
 
 // when we reference the alias, we place an
-// @ in front of it's name
+// @ in front of its name
 cy.get('@firstBtn').click()
 
 cy.get('@firstBtn')
